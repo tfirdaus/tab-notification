@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	
+	<title>Acme</title>
+	
+	<!-- custom-fonts -->
+	<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+	<link href='http://fonts.googleapis.com/css?family=Nunito|Lato:300,400,700' rel='stylesheet' type='text/css'>
+	<!-- ./custom-fonts -->
+
+	<link rel="shortcut icon" href="img/favicon.gif?2"/>
+	<link rel="stylesheet" href="css/style.css">
+
+</head>
+
+<body>
+
+<nav class="demo-nav">
+	<ul class="nav-list">
+		<li class="nav-item"><a href="index.html">Demo 1</a></li>
+		<li class="nav-item"><a href="index2.html">Demo 2</a></li>
+		<li class="nav-item"><a href="index3.html">Demo 3</a></li>
+	</ul>
+</nav>
+
+<div class="container">
+
+	<textarea class="form-update" id="post-update" name="post" rows="5" placeholder="What's on your mind..."></textarea>
+
+	<div class="btn-group">
+		<button class="btn btn-reset" id="reset">Reset</button>
+		<button class="btn btn-send" id="send"><i class="icon fa fa-paper-plane"></i>Send</button>
+	</div>
+
+</div>
+
+<script>
+
+	var count = 1;
+	var title = document.title;
+
+	function send() {
+		var notify   = count++;
+		var newTitle = '(' + notify + ') ' + title;
+
+		document.title = newTitle;
+	}
+	function reset() {
+		document.title = title;
+	}
+
+	var btnSend  = document.getElementById('send');
+	var btnReset = document.getElementById('reset');
+
+	btnSend.onclick  = send;
+	btnReset.onclick = reset;
+
+</script>
+
+</body>
+</html>

@@ -1,0 +1,111 @@
+html {
+  box-sizing: border-box;
+}
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+body {
+	background-color: #009688;
+}
+
+.container {
+	width: 600px;
+	margin-right: auto;
+	margin-left: auto;
+	text-align: center;
+	margin-top: 80px;
+}
+
+.nav-list {
+	padding: 0;
+	margin: 0;
+	list-style-type: none;
+}
+.nav-item {
+	display: inline-block;
+	padding: 0 10px;
+}
+.nav-item a {
+	color: #80CBC4;
+	font-family: Nunito, 'Trebuchet MS', 'Lucida Grande', 'Lucida Sans Unicode', 'Lucida Sans', Tahoma, sans-serif;
+	text-decoration: none;
+	text-transform: uppercase;
+	-webkit-transition: all 0.3s ease-out;
+  -moz-transition: all 0.3s ease-out;
+  -o-transition: all 0.3s ease-out;
+  transition: all 0.3s ease-out;
+}
+
+.nav-item a:hover {
+	color: #fff;
+}
+
+.form-update {
+	width: 100%;
+	font-size: 18px;
+	padding: 15px;
+	background-color: #E0F2F1;
+	border-radius: 5px;
+	border: 1px solid #00897B;
+	font-family: Lato, 'Trebuchet MS', 'Lucida Grande', 'Lucida Sans Unicode', 'Lucida Sans', Tahoma, sans-serif;
+	font-weight: 300;
+	color: #222;
+	-webkit-transition: all 0.3s ease-out;
+  -moz-transition: all 0.3s ease-out;
+  -o-transition: all 0.3s ease-out;
+  transition: all 0.3s ease-out;
+}
+.form-update:focus {
+	background-color: #fff;
+	outline: 0;
+	border-color: #00695C;
+}
+
+.btn-group {
+	text-align: right;
+	margin-right: auto;
+	margin-left: auto;
+	margin-top: 10px;
+}
+
+.btn {
+	background-color: #fff0e2;
+	border: none;
+	padding: 10px 30px;
+	font-weight: 600;
+	text-transform: uppercase;
+	cursor: pointer;
+	font-size: 14px;
+	color: #dd2c00;
+	font-family: Nunito, 'Trebuchet MS', 'Lucida Grande', 'Lucida Sans Unicode', 'Lucida Sans', Tahoma, sans-serif;
+	border-radius: 5px;
+	font-weight: 400;
+	border: 1px solid transparent;
+
+	-webkit-transition: all 0.3s ease-out;
+  -moz-transition: all 0.3s ease-out;
+  -o-transition: all 0.3s ease-out;
+  transition: all 0.3s ease-out;
+}
+.btn-send:hover,
+.btn-send:focus {
+	background-color: #BF360C;
+	color: #fff;
+}
+.btn-send:focus {
+	outline: 0;
+	background-color: #D84315;
+	border: 1px solid #DD2C00;
+}
+
+.btn-reset {
+	background-color: transparent;
+	color: #00695C;
+}
+.btn-reset:hover {
+	color: #fff;
+}
+
+.icon {
+	margin-right: 8px;
+}
