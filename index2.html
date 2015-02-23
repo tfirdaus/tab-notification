@@ -7,16 +7,15 @@
 	<title>Acme</title>
 	
 	<!-- custom-fonts -->
-	<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
-	<link href='http://fonts.googleapis.com/css?family=Nunito|Lato:300,400,700' rel='stylesheet' type='text/css'>
+	<link href='http://fonts.googleapis.com/css?family=Merriweather:400,300|Nunito' rel='stylesheet' type='text/css'>
 	<!-- ./custom-fonts -->
 
-	<link id="favicon" rel="shortcut icon" href="img/favicon.gif?2" type="image/x-icon" />
+	<link id="favicon" rel="icon" href="img/favicon.gif?v3"/>
 	<link rel="stylesheet" href="css/style.css">
 
 </head>
 
-<body>
+<body id="site-body">
 
 <nav class="demo-nav">
 	<ul class="nav-list">
@@ -27,31 +26,42 @@
 </nav>
 
 <div class="container">
-	
-	<textarea class="form-update" id="post-update" name="post" rows="5" placeholder="What's on your mind..."></textarea>
 
-	<div class="btn-group">
-		<button class="btn btn-reset" id="reset">Reset</button>
-		<button class="btn btn-send" id="send"><i class="icon fa fa-paper-plane"></i>Send</button>
+	<div class="demo-description">
+		<p>Display the alternate favicon variant.</p>
+		<small>The favicon will change within 3 second.</small>
 	</div>
 
+	<div class="btn-group">
+		<button class="btn" id="reset">Reset</button>
+	</div>
 </div>
 
 <script>
-	var icon    = 'img/favicon.gif?v2';
-	var iconNew = 'img/favicon-dot.gif';
+	var icon        = 'img/favicon.gif?v3';
+	var iconNew     = 'img/favicon-dot.gif?v5';
+	// var iconAnimate = 'img/favicon-dot-animated.gif?v4'; // does not work in Chrome
 
-	function send() {
+	function changeFavicon() {
 		document.getElementById('favicon').href = iconNew;
+		// document.getElementById('favicon').href = iconAnimate; // does not work in Chrome
 	}
+
+	function newUpdate() {
+		update = setInterval(changeFavicon, 3000);
+		setTimeout(function( ) { clearInterval( update ); }, 3100);
+	}
+
+	var docBody  = document.getElementById('site-body');
+	docBody.onload = newUpdate;
+
+	// 
 	function reset() {
 		document.getElementById('favicon').href = icon;
 	}
 
-	var btnSend  = document.getElementById('send');
 	var btnReset = document.getElementById('reset');
 
-	btnSend.onclick  = send;
 	btnReset.onclick = reset;
 </script>
 

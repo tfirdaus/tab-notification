@@ -7,16 +7,15 @@
 	<title>Acme</title>
 	
 	<!-- custom-fonts -->
-	<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
-	<link href='http://fonts.googleapis.com/css?family=Nunito|Lato:300,400,700' rel='stylesheet' type='text/css'>
+	<link href='http://fonts.googleapis.com/css?family=Merriweather:400,300|Nunito' rel='stylesheet' type='text/css'>
 	<!-- ./custom-fonts -->
 
-	<link rel="shortcut icon" href="img/favicon.gif?2"/>
+	<link rel="shortcut icon" href="img/favicon.gif?v3"/>
 	<link rel="stylesheet" href="css/style.css">
 
 </head>
 
-<body>
+<body id="site-body">
 
 <nav class="demo-nav">
 	<ul class="nav-list">
@@ -28,35 +27,41 @@
 
 <div class="container">
 
-	<textarea class="form-update" id="post-update" name="post" rows="5" placeholder="What's on your mind..."></textarea>
+	<div class="demo-description">
+		<p>Inserts the number of update in the title.</p>
+		<small>The number will increase in every 1 second.</small>
+	</div>
 
 	<div class="btn-group">
-		<button class="btn btn-reset" id="reset">Reset</button>
-		<button class="btn btn-send" id="send"><i class="icon fa fa-paper-plane"></i>Send</button>
+		<button class="btn" id="stop">Stop</button>
 	</div>
 
 </div>
 
 <script>
 
-	var count = 1;
+	var count = 0;
 	var title = document.title;
 
-	function send() {
-		var notify   = count++;
-		var newTitle = '(' + notify + ') ' + title;
-
+	function changeTitle() {
+		count++;
+		var newTitle = '(' + count + ') ' + title;
 		document.title = newTitle;
 	}
-	function reset() {
-		document.title = title;
+
+	function newUpdate() {
+		update = setInterval(changeTitle, 1000);
 	}
 
-	var btnSend  = document.getElementById('send');
-	var btnReset = document.getElementById('reset');
+	var docBody  = document.getElementById('site-body');
+	docBody.onload = newUpdate;
 
-	btnSend.onclick  = send;
-	btnReset.onclick = reset;
+	// Stop button
+	function stop() {
+  	clearInterval(update);
+	}
+	var btnStop  = document.getElementById('stop');
+	btnStop.onclick  = stop;
 
 </script>
 
